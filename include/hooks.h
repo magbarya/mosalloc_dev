@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <sys/types.h>
 #include <unistd.h>
+#include <cstddef>
 
 #ifdef __cplusplus
 #define __THROW_EXCEPTION __THROW
