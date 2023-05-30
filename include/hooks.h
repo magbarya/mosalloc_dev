@@ -24,7 +24,9 @@ int munmap(void *addr, size_t length) __THROW_EXCEPTION;
 int brk(void *addr) __THROW_EXCEPTION;
 void *sbrk(ptrdiff_t increment) __THROW_EXCEPTION;
 void *mosalloc_morecore(ptrdiff_t increment) __THROW_EXCEPTION;
- 
+
+#define MORECORE(s) mosalloc_morecore(s)
+
 #ifdef __cplusplus
 }  /* end of extern "C" */
 #endif /* __cplusplus */

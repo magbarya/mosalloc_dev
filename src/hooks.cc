@@ -27,9 +27,6 @@ std::mutex g_hook_mmap_mutex;
 //std::mutex g_hook_malloc_mutex;
 bool alloc_request_intercepted = false;
 
-//void *(*__morecore)(ptrdiff_t) = sbrk;
-//__morecore = sbrk;
-
 /**
  * this flag is used to prevent potential deadlock in some memory allocators 
  * (such as dlmalloc):
@@ -104,7 +101,7 @@ static void setup_morecore() {
     // multi-threaded applications)
     mallopt(M_ARENA_MAX, 1);
     
-    __morecore = mosalloc_morecore;
+    // __morecore = mosalloc_morecore;
 }
 
 static void activate_mosalloc() {
